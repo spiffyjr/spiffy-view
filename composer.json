@@ -1,0 +1,27 @@
+{
+    "name": "spiffy/spiffy-view",
+    "authors": [
+        {
+            "name": "Kyle Spraggs",
+            "email": "theman@spiffyjr.me"
+        }
+    ],
+    "description": "Spiffy\\View is a light-weight, HHVM compatible, and dependency lite view library. It does not provide its own templating system!",
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "squizlabs/php_codesniffer": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spiffy\\View\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0-dev"
+        }
+    }
+}
