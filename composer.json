@@ -12,7 +12,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
-        "squizlabs/php_codesniffer": "~1.0"
+        "squizlabs/php_codesniffer": "~1.0",
+        "twig/twig": "~1.15"
+    },
+    "suggest": {
+        "twig/twig": "To use Twig as the view engine"
     },
     "autoload": {
         "psr-4": {
