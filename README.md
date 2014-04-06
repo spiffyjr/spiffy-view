@@ -10,3 +10,7 @@ Spiffy\View can be installed using composer which will setup any autoloading for
 `composer require spiffy/spiffy-view`
 
 Additionally, you can download or clone the repository and setup your own autoloading.
+
+## Information
+
+This library does little on it's own. It's intended to be used as a compatability layer for various templating engines.
