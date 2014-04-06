@@ -10,12 +10,6 @@ interface Renderer
     public function getEngine();
 
     /**
-     * @param Resolver $resolver
-     * @return void
-     */
-    public function setResolver(Resolver $resolver);
-
-    /**
      * @param $nameOrModel
      * @param null|array $variables
      * @return string
