@@ -3,7 +3,7 @@
 namespace Spiffy\View;
 
 /**
- * @coversDefaultClass \Spiffy\View\Model\ModelTrait
+ * @coversDefaultClass \Spiffy\View\ModelTrait
  */
 class ModelTraitTest extends \PHPUnit_Framework_TestCase
 {
