@@ -12,7 +12,8 @@ interface Strategy
 
     /**
      * @param string $nameOrModel
+     * @param array $variables
      * @return string
      */
-    public function render($nameOrModel);
+    public function render($nameOrModel, array $variables = []);
 }
