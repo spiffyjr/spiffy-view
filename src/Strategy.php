@@ -5,13 +5,13 @@ namespace Spiffy\View;
 interface Strategy
 {
     /**
-     * @param string $nameOrModel
+     * @param Model|string $nameOrModel
      * @return bool
      */
     public function canRender($nameOrModel);
 
     /**
-     * @param string $nameOrModel
+     * @param Model|string $nameOrModel
      * @param array $variables
      * @return string
      */

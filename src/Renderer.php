@@ -10,7 +10,7 @@ interface Renderer
     public function getEngine();
 
     /**
-     * @param $nameOrModel
+     * @param string|Model $nameOrModel
      * @param null|array $variables
      * @return string
      */
