@@ -2,7 +2,7 @@
 
 namespace Spiffy\View;
 
-interface Strategy
+interface ViewStrategy
 {
     /**
      * @param Model|string $nameOrModel

@@ -2,7 +2,7 @@
 
 namespace Spiffy\View;
 
-interface Renderer
+interface ViewRenderer
 {
     /**
      * @return mixed
@@ -10,7 +10,7 @@ interface Renderer
     public function getEngine();
 
     /**
-     * @param string|Model $nameOrModel
+     * @param string|ViewModel $nameOrModel
      * @param null|array $variables
      * @return string
      */

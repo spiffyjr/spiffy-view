@@ -2,10 +2,10 @@
 
 namespace Spiffy\View;
 
-interface Resolver
+interface ViewResolver
 {
     /**
-     * @param Model|string $nameOrModel
+     * @param ViewModel|string $nameOrModel
      * @return bool
      */
     public function resolve($nameOrModel);
