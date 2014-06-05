@@ -2,42 +2,8 @@
 
 namespace Spiffy\View;
 
-use Spiffy\Event\Manager;
-use Spiffy\Event\Plugin;
-use Spiffy\Mvc\MvcEvent;
-use Symfony\Component\HttpFoundation\Response;
-
-class JsonStrategy implements Plugin, ViewStrategy
+class JsonStrategy implements ViewStrategy
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function plug(Manager $events)
-    {
-        $events->on(MvcEvent::EVENT_FINISH, [$this, 'injectResponse'], 100);
-    }
-
-    /**
-     * @param MvcEvent $e
-     */
-    public function injectResponse(MvcEvent $e)
-    {
-        $model = $e->getModel();
-        if (!$model instanceof JsonModel) {
-            return;
-        }
-
-        $response = new Response();
-
-        if ($model->isJonP()) {
-            $response->headers->set('Content-Type', 'application/javascript');
-        } else {
-            $response->headers->set('Content-Type', 'application/json');
-        }
-
-        $e->setResponse($response);
-    }
-
     /**
      * {@inheritDoc}
      */
@@ -53,9 +19,15 @@ class JsonStrategy implements Plugin, ViewStrategy
      */
     public function render($nameOrModel, array $variables = [])
     {
-        $result = json_encode(array_merge($nameOrModel->getVariables(), $variables));
+        $isJsonP = false;
+        if ($nameOrModel instanceof JsonModel) {
+            $variables = array_merge($variables, $nameOrModel->getVariables());
+            $isJsonP = $nameOrModel->isJsonP();
+        }
 
-        if ($nameOrModel->isJonP()) {
+        $result = json_encode($variables);
+
+        if ($isJsonP) {
             $result = sprintf('%s(%s);', $nameOrModel->getCallbackMethod(), $result);
         }
 
