@@ -14,7 +14,7 @@ final class JsonModel implements Model
     /**
      * @return bool
      */
-    final public function isJsonP()
+    public function isJsonP()
     {
         return null !== $this->callbackMethod;
     }

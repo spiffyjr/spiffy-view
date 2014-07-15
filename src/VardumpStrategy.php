@@ -19,11 +19,6 @@ class VardumpStrategy implements ViewStrategy
      */
     public function render($nameOrModel, array $variables = [])
     {
-        if (!$nameOrModel instanceof Model) {
-            $nameOrModel = new ViewModel();
-            $nameOrModel->setVariables($variables);
-        }
-
         var_dump($nameOrModel);
     }
 }
